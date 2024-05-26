@@ -1,0 +1,16 @@
+body{
+    background: url(https://img.freepik.com/vector-premium/coctel-neon-moda-letrero-luz-noche-letrero-brillante-banner-verano-emblema-club-bar-logo-sobre-fondo-oscuro_104045-1733.jpg);
+    height: 85vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+  }
+.pass{
+    display: flex;
+    align-items: center;
+}
+
+.bx{
+    cursor: pointer;
+}
