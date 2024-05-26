@@ -6,7 +6,7 @@ if (empty($_SESSION["idUsuarios"])) {
 
 require "../../Modelo/conexion.php";
 
-$sql_filtrar_ventas = "SELECT idVentas_Temp, Cantidad, Valor_total, Fecha_venta, Nombre_sede, Nombre_producto, Mesa_venta FROM base_bar.ventas_totales";
+$sql_filtrar_ventas = "SELECT idVentas_Temp, Cantidad, Valor_total, Fecha_venta, Nombre_sede, Nombre_producto, Mesa_venta, Metodo_pago FROM base_bar.ventas_totales";
 $Ventas = mysqli_query($conexion, $sql_filtrar_ventas);
 ?>
 <!DOCTYPE html>
@@ -187,6 +187,7 @@ $Ventas = mysqli_query($conexion, $sql_filtrar_ventas);
                                             <th>Cantidad</th>
                                             <th>Valor total</th>
                                             <th>Mesa de la venta</th>
+                                            <th>Metodo de pago</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -210,6 +211,9 @@ $Ventas = mysqli_query($conexion, $sql_filtrar_ventas);
                                                 <td>
                                                     <?php echo $row["Mesa_venta"]; ?>
                                                 </td>
+                                                <td>
+                                                    <?php echo $row["Metodo_pago"]; ?>
+                                                </td>
                                             </tr>
                                         <?php }; ?>
                                     </tbody>
@@ -221,6 +225,7 @@ $Ventas = mysqli_query($conexion, $sql_filtrar_ventas);
                                             <th>Sede de la venta</th>
                                             <th>Porducto vendido</th>
                                             <th>Mesa de la venta</th>
+                                            <th>Metodo de pago</th>
                                         </tr>
                                     </tfoot>
                                 </table>

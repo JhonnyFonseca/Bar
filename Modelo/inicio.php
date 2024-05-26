@@ -7,7 +7,7 @@ if($_POST){
     $userid = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $sql ="SELECT IdUsuario, Contrasena FROM base_bar.login where IdUsuario ='$userid' and Contrasena ='$password'";
+    $sql ="SELECT IdUsuario, (aes_decrypt(Contrasena, 'AES')) Recuperado FROM base_bar.login where IdUsuario = '$userid' and aes_decrypt(Contrasena, 'AES') = '$password'";
     $resultado = mysqli_query($conexion, $sql);
     $num_registros = mysqli_num_rows($resultado);
 
