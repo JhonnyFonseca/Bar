@@ -184,7 +184,10 @@ $MesaProd = mysqli_query($conexion, $sql_filtrar_mesa_prod);
                             <!-- Project Card Example -->
                             <div class="card">
                             <div class="card-header d-flex justify-content-between align-items-end">
-                                <h4>Productos actuales</h4>
+                                <?php
+                                    $totalProductos = mysqli_num_rows($MesaProd);
+                                ?>
+                                <h4 class="mb-0">Productos actuales <span class="badge badge-primary"><?php echo $totalProductos; ?></span></h4>
                                 <button type="button" class="btn btn-primary" data-toggle="modal"data-target="#InsertProd">
                                         Agregar producto
                                 </button>
